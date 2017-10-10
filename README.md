@@ -1,4 +1,5 @@
 import java.util.Deque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
+        
         int g = in.nextInt();
         for (int a0 = 0; a0 < g; a0++) {
             int n = in.nextInt();
@@ -44,13 +45,12 @@ public class Solution {
                 int value = in.nextInt();
                 sum += value;
                 int count = i + 1;
-                if(sum <= x) {
+                if(sum < x) {
                     b.addLast(new Element(sum, count));
                 }
             }
 
             System.out.println(maxScore(a, b, x));
-
         }
     }
 
@@ -69,6 +69,6 @@ public class Solution {
             max = max < b.getLast().count ? b.getLast().count : max;
         }
 
-        return max;
+        return  max;
     }
 }
